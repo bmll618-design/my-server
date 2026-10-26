@@ -16,7 +16,7 @@ router.post('/jobs', async (req, res, next) => {
     const params = validateCreateBody(req.body);
     const { mode, notes } = resolveMode(params.images);
     const job = await provider.createJob({ ...params, mode });
-    res.status(201).json({ ...job, mode, notes });
+    res.status(201).json({ ...job, mode, notes: [...notes, ...(job.notes || [])] });
   } catch (e) { next(e); }
 });
 

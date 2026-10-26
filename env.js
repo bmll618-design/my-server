@@ -14,6 +14,11 @@ export const env = {
       reference: process.env.WAN_R2V_MODEL || 'wan2.7-r2v',
     },
   },
+  hf: {
+    token: process.env.HF_TOKEN || '',
+    spaceId: process.env.HF_SPACE_ID || 'multimodalart/wan2-1-fast',
+    apiName: process.env.HF_API_NAME || '',
+  },
   ark: {
     apiKey: process.env.ARK_API_KEY || '',
     baseUrl: process.env.ARK_BASE_URL || 'https://ark.ap-southeast.bytepluses.com/api/v3',
